@@ -8,7 +8,6 @@
 
 #import "LSIStopWatch.h"
 
-
 @interface LSIStopWatch ()
 
 @property (nonatomic, readwrite, getter=isRunning) BOOL running;
@@ -18,7 +17,6 @@
 @property (nonatomic) NSTimer *timer;
 
 @property (nonatomic) NSTimeInterval previouslyAccumulatedTime;
-
 
 @end
 
@@ -42,7 +40,6 @@
     self.running = NO;
 }
 
-
 - (void)reset {
     [self stop];
     self.elapsedTime = 0;
@@ -56,7 +53,6 @@
     self.elapsedTime = [[NSDate date] timeIntervalSinceDate:self.startDate] + self.previouslyAccumulatedTime;
 }
 
-
 #pragma mark - Properties
 
 - (void)setTimer:(NSTimer *)timer {
@@ -65,6 +61,5 @@
         _timer = timer;
     }
 }
-
 
 @end
