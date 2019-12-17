@@ -67,7 +67,21 @@
     
     NSLog(@"%@", self.hrController);
     
+    NSLog(@"%@", self.hrController.departments);                      // Property
+    NSLog(@"%@", [self.hrController departments]);                    // Message Calling
+    NSLog(@"%@", [self.hrController valueForKeyPath:@"departments"]); // KVC
     
+    NSLog(@"Departments employees: %@", [self.hrController valueForKeyPath:@"departments.employees"]);
+    
+    // Possible to get one list of employees [Employee]
+    NSLog(@"All employees: %@", [self.hrController valueForKeyPath:@"departments.@distinctUnionOfArrays.employees"]);
+    
+    NSArray *allEmployees = [self.hrController valueForKeyPath:@"departments.@distinctUnionOfArrays.employees"];
+    
+    NSLog(@"Highest Salary: %@", [allEmployees valueForKeyPath:@"@max.salary"]);
+    NSLog(@"Average Salary: %@", [allEmployees valueForKeyPath:@"@avg.salary"]);
+    NSLog(@"Lowest Salary: %@", [allEmployees valueForKeyPath:@"@min.salary"]);
+    // String based Method
 }
 
 
