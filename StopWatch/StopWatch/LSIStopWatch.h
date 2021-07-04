@@ -19,7 +19,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)stop;
 - (void)reset;
 
-
 @end
 
 NS_ASSUME_NONNULL_END
